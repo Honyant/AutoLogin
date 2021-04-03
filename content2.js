@@ -1,4 +1,7 @@
 // content.js
+
+
+
 function waitForElementToDisplay(selector, callback, checkFrequencyInMs, timeoutInMs) {
   var startTimeInMs = Date.now();
   (function loopSearch() {

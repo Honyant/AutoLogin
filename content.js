@@ -1,6 +1,7 @@
 // content.js
 //https://stackoverflow.com/questions/5525071/how-to-wait-until-an-element-exists
 
+
 function waitForElementToDisplay(selector, callback, checkFrequencyInMs, timeoutInMs) {
   var startTimeInMs = Date.now();
   (function loopSearch() {
