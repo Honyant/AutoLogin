@@ -4,7 +4,8 @@ This extension is a simple extension for students at St. Mark's School of Texas 
 # Usage
 1. Clone this repo or download and unzip it
 2. Go to chrome://extensions or whatever the equivalent page is for your browser.
-3. Click "Load unpacked" and select the AutoLogin folder
-4. Enter your credentials when prompted and click on the extension icon to change your credentials.
+3. Turn on developer mode on your browser
+4. Click "Load unpacked" and select the AutoLogin folder
+5. Enter your credentials when prompted and click on the extension icon to change your credentials.
 ### Notes
 - If you want the more secure version of this extension (not storing passwords in local storage and simple relying on browser autofill, switch the names of manifest and manifest2)
