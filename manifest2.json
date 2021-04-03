@@ -9,10 +9,7 @@
           "https://smtexas.myschoolapp.com/app/"
         ],
         "js": ["content2.js"],
-        "run_at": "document_end",
-        "web_accessible_resources": [
-          "data.json"
-        ]
+        "run_at": "document_end"
       }
     ],
   "icons": { "16": "icon16.png",
