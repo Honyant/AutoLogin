@@ -1,0 +1,4 @@
+
+This extension is a simple extension for students at St. Mark's School of Texas for automatically logging in to their online learning management system. This was created because the system logs users out after a short time. Currently 
+
+I originally implemented for this plugin to automatically input username and password into the login page, but decided against it because security concerns about storing credentials in plaintext. (The code for that is still in the extension, just not executed.) Thus, this extention simply presses the buttons to log in and assumes the brower will autofill the login forms.

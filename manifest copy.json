@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "AutoLogin",
+  "version": "0.0.1",
+  "description": "Automatic login for the St. Mark's LMS",
+  "content_scripts": [
+      {
+        "matches": [
+          "https://smtexas.myschoolapp.com/app/"
+        ],
+        "js": ["content.js"],
+        "run_at": "document_end",
+        "web_accessible_resources": [
+          "data.json"
+        ]
+      }
+    ],
+  "icons": { "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png" },
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  }
+}
+
