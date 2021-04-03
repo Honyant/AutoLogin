@@ -45,4 +45,22 @@ waitForElementToDisplay("#site-login-input",function(){
   },500);
 },100,9000);
 
+waitForElementToDisplay("#to-pw",function(){
+  chrome.storage.local.get(['u','p'], function(result) {
+    u=result.u;
+    p=result.p;
+    if(u=="undefined"||u==undefined){
+      u=prompt("(First time setup) What is your username?")
+      chrome.storage.local.set({'u': u});
+    
+      p=prompt("(First time setup) What is your username?")
+      chrome.storage.local.set({'p': p});
+    }
+    setTimeout(() => {
+      document.getElementById('to-pwd').value=p
+      document.getElementById('to-signin').click()
+    }, 100)
+  });
+  
+},2000,900000000);
 //to-pwd "session timeout"

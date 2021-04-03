@@ -9,4 +9,5 @@ This extension is a simple extension for students at St. Mark's School of Texas 
 4. Click "Load unpacked" and select the AutoLogin folder
 5. Enter your credentials when prompted and click on the extension icon to change your credentials.
 ### Notes
-- If you want the more secure version of this extension (not storing passwords in local storage and simple relying on browser autofill, switch the names of manifest and manifest2)
+- v0.2 Now automatically responds to "session timeout" and link matching is more robust
+- If you want the more secure version of this extension (not storing plaintext passwords in local storage and simply relying on browser autofill, switch the names of the files manifest and manifest2)
