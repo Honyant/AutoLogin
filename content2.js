@@ -1,5 +1,5 @@
 // content.js
-
+//https://stackoverflow.com/questions/5525071/how-to-wait-until-an-element-exists
 
 
 function waitForElementToDisplay(selector, callback, checkFrequencyInMs, timeoutInMs) {
@@ -18,31 +18,14 @@ function waitForElementToDisplay(selector, callback, checkFrequencyInMs, timeout
     }
   })();
 }
-
 waitForElementToDisplay("#site-login-input",function(){
   setTimeout(() => {
-    var u;
-    var p;
-    chrome.storage.local.get(['u','p'], function(result) {
-      u=result.u;
-      p=result.p;
-      if(u=="undefined"||u==undefined){
-        u=prompt("(First time setup) What is your username?")
-        chrome.storage.local.set({'u': u});
-      
-        p=prompt("(First time setup) What is your username?")
-        chrome.storage.local.set({'p': p});
-      }
-      setTimeout(() => {
-        document.getElementById('Username').value=u
-        document.getElementById('nextBtn').click()
-        setTimeout(() => {
-          document.getElementById('Password').value=p
-          document.getElementById('loginBtn').click()
-        }, 200)
-      }, 100)
-    });
-  },500);
+    document.getElementById('nextBtn').click()
+    setTimeout(() => {
+      document.getElementById('loginBtn').click()
+    }, 200); 
+  }, 400)
 },100,9000);
+
 
 //to-pwd "session timeout"

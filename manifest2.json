@@ -8,7 +8,7 @@
         "matches": [
           "https://smtexas.myschoolapp.com/app/"
         ],
-        "js": ["content.js"],
+        "js": ["content2.js"],
         "run_at": "document_end"
       }
     ],
