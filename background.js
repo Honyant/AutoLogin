@@ -1,4 +1,4 @@
-/*chrome.browserAction.onClicked.addListener(function(tab) { 
+chrome.browserAction.onClicked.addListener(function(tab) { 
     var u=prompt("What is your username?")
     var p=prompt("What is your password?")
     if(u!=null){
@@ -12,5 +12,5 @@
         });
     }
 });
-*/
+
 
