@@ -45,7 +45,7 @@ waitForElementToDisplay("#site-login-input",function(){
   },500);
 },100,9000);
 
-waitForElementToDisplay("#to-pw",function(){
+waitForElementToDisplay("#to-pwd",function(){
   chrome.storage.local.get(['u','p'], function(result) {
     u=result.u;
     p=result.p;

@@ -23,7 +23,9 @@
   "background": {
     "scripts": ["background.js"]
   },
-  "browser_action": {}
+  "browser_action": {},
+  "default_locale": "en"
+
 
 
 }

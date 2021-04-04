@@ -18,7 +18,9 @@
     "128": "icon128.png" },
   "permissions": [
     "activeTab"
-  ]
+  ],
+    "default_locale": "en"
+
 }
 
   
