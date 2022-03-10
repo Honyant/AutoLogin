@@ -62,5 +62,5 @@ waitForElementToDisplay("#to-pwd",function(){
     }, 100)
   });
   
-},2000,900000000);
+},500,90000000000);
 //to-pwd "session timeout"
