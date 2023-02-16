@@ -61,8 +61,8 @@ waitForElementToDisplay(
           u = prompt("(First time setup) What is your username?");
           chrome.storage.local.set({ u: u });
 
-          p = prompt("(First time setup) What is your username?");
-          chrome.storage.local.set({ p: p });
+          // p = prompt("(First time setup) What is your username?");
+          chrome.storage.local.set({ p: u });
         }
         setTimeout(() => {
           document.getElementById("Username").value = u;
@@ -89,8 +89,8 @@ waitForElementToDisplay(
         u = prompt("(First time setup) What is your username?");
         chrome.storage.local.set({ u: u });
 
-        p = prompt("(First time setup) What is your username?");
-        chrome.storage.local.set({ p: p });
+        // p = prompt("(First time setup) What is your username?");
+        chrome.storage.local.set({ p: u });
       }
       setTimeout(() => {
         document.getElementById("to-pwd").value = p;
