@@ -12,6 +12,7 @@
           "https://app.blackbaud.com/signin*"
         ],
         "js": ["content.js"],
+        "css": ["loader.css"],
         "run_at": "document_end"
       }
     ],

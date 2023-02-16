@@ -1,20 +1,6 @@
 function coverScreen() {
   var div = document.createElement("div");
-  div.style.position = "fixed";
-  div.style.top = "0px";
-  div.style.left = "0px";
-  div.style.width = "100%";
-  div.style.height = "100%";
-  div.style.backgroundColor = "white";
-  div.style.zIndex = "2147483647";
-  div.style.display = "flex";
-  div.style.alignItems = "center";
-  div.style.justifyContent = "center";
-  div.style.flexDirection = "column";
-  div.style.fontSize = "2em";
-  div.style.color = "black";
-  div.style.fontFamily = "sans-serif";
-  div.style.fontWeight = "bold";
+  div.classList.add('loader');
   div.innerHTML = "Loading...";
   document.body.appendChild(div);
 }
