@@ -34,9 +34,6 @@ waitForElementToDisplay("#to-pwd",function(){
     if(u=="undefined"||u==undefined){
       u=prompt("(First time setup) What is your username?")
       chrome.storage.local.set({'u': u});
-    
-      p=prompt("(First time setup) What is your username?")
-      chrome.storage.local.set({'p': p});
     }
     setTimeout(() => {
       document.getElementById('to-pwd').value=p
@@ -44,6 +41,6 @@ waitForElementToDisplay("#to-pwd",function(){
     }, 100)
   });
   
-},500,90000000000);
+},5000,90000000000);
 
 //to-pwd "session timeout"

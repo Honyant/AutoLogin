@@ -1,13 +1,15 @@
 {
   "manifest_version": 2,
   "name": "AutoLogin",
-  "version": "0.2",
+  "version": "0.3",
   "description": "Automatic login for the St. Mark's LMS",
   "content_scripts": [
       {
         "matches": [
           "https://smtexas.myschoolapp.com/app/*",
-          "https://smtexas.myschoolapp.com/app"
+          "https://smtexas.myschoolapp.com/app",
+          "https://app.blackbaud.com/signin/*",
+          "https://app.blackbaud.com/signin*"
         ],
         "js": ["content.js"],
         "run_at": "document_end"
