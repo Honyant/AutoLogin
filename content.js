@@ -1,6 +1,6 @@
 function coverScreen() {
   var div = document.createElement("div");
-  div.classList.add('loader');
+  div.classList.add('loadingScreen');
   div.innerHTML = "Loading...";
   document.body.appendChild(div);
 }
