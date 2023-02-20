@@ -1,6 +1,6 @@
 {
-    "AutoLogin":{
-        "message":"AutoLogin",
-        "description":"Extension Name"
-    }
+  "AutoLogin": {
+    "message": "AutoLogin",
+    "description": "Extension Name"
+  }
 }
