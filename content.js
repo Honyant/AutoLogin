@@ -81,24 +81,16 @@ waitForElementToDisplay(
   function () {
     setTimeout(() => {
       var u;
-      var p;
-      chrome.storage.local.get(["u", "p"], function (result) {
+      chrome.storage.local.get(["u"], function (result) {
         u = result.u;
-        p = result.p;
         if (u == "undefined" || u == undefined) {
-          u = prompt("(First time setup) What is your username?");
+          u = prompt("(First time setup) What is your emai,?");
           chrome.storage.local.set({ u: u });
 
-          // p = prompt("(First time setup) What is your username?");
-          chrome.storage.local.set({ p: u });
         }
         setTimeout(() => {
           document.getElementById("Username").value = u;
           document.getElementById("nextBtn").click();
-          setTimeout(() => {
-            document.getElementById("Password").value = p;
-            document.getElementById("loginBtn").click();
-          }, 200);
         }, 100);
       });
     }, 500);
@@ -181,10 +173,6 @@ function good_view() {
         )
       )
     );
-  } else if (window.location.hash === "#studentmyday/progress") {
-    waitForThing("coursesContainer", () => {
-      document.getElementById("coursesContainer").remove();
-    });
   }
 }
 
