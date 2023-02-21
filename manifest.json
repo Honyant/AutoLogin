@@ -1,8 +1,11 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "AutoLogin",
-  "version": "0.3",
+  "version": "0.4",
   "description": "Automatic login for the St. Mark's LMS",
+  "action": {
+    "default_title": "Automatic login for the St. Mark's LMS"
+  },
   "content_scripts": [
     {
       "matches": [
@@ -17,10 +20,9 @@
     }
   ],
   "icons": { "16": "icon16.png", "48": "icon48.png", "128": "icon128.png" },
-  "permissions": ["storage", "activeTab"],
+  "permissions": ["activeTab", "scripting", "storage"],
   "background": {
-    "scripts": ["background.js"]
+    "service_worker": "background.js"
   },
-  "browser_action": {},
   "default_locale": "en"
 }
