@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css"
+    />
+  </head>
+
+  <body style="width: 400px">
+    <main class="container">
+      <!-- Preview -->
+      <section id="settings">
+        <form id="settings-form">
+          <h2>
+            AutoLogin <br />
+            Settings
+          </h2>
+          <div class="grid">
+            <fieldset>
+              <label for="switch-1">
+                <input
+                  type="checkbox"
+                  id="dark-mode"
+                  name="switch-1"
+                  role="switch"
+                  checked
+                />
+                Dark Mode
+              </label>
+            </fieldset>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email address"
+              aria-label="Email address"
+              id="email"
+              required
+            />
+            <button id="submit-settings">Save</button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

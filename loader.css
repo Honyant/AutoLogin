@@ -35,6 +35,7 @@
   justify-content: center;
   flex-direction: column;
   z-index: 1293809;
+  background-color: white;
 }
 
 .loading svg {

@@ -7,15 +7,24 @@
 // }
 
 function coverScreen() {
-  var div = document.createElement("div");
-  div.classList.add("loading");
-  div.innerHTML = `<svg width="300px" height="200px" viewBox="0 0 187.3 93.7" preserveAspectRatio="xMidYMid meet">
-  <path id="infinity-outline" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" 
-        d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1        c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z" />
-  <path id="infinity-bg" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" 
-        d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1        c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z" />
-  </svg>`;
-  document.body.appendChild(div);
+  chrome.storage.sync.get(["darkMode"], (result) => {
+    if (result.darkMode)
+      document.documentElement.style.backgroundColor = "#582a6b";
+    var div = document.createElement("div");
+    div.classList.add("loading");
+    div.innerHTML = `<svg width="300px" height="200px" viewBox="0 0 187.3 93.7" preserveAspectRatio="xMidYMid meet">
+    <path id="infinity-outline" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" 
+          d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1        c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z" />
+    <path id="infinity-bg" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" 
+          d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1        c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z" />
+    </svg>`;
+    document.body.appendChild(div);
+    if (result.darkMode) {
+      div.style.backgroundColor = "#582a6b";
+      document.getElementById("infinity-outline").style.stroke = "#fff";
+      document.getElementById("infinity-bg").style.stroke = "#bdbdbd";
+    }
+  });
 }
 
 window.addEventListener("hashchange", function () {
@@ -80,16 +89,15 @@ waitForElementToDisplay(
   "#site-login-input",
   function () {
     setTimeout(() => {
-      var u;
-      chrome.storage.local.get(["u"], function (result) {
-        u = result.u;
-        if (u == "undefined" || u == undefined) {
-          u = prompt("(First time setup) What is your emai,?");
-          chrome.storage.local.set({ u: u });
-
+      var email;
+      chrome.storage.sync.get(["email"], (result) => {
+        email = result.email;
+        if (email == "undefined" || email == undefined) {
+          email = prompt("(First time setup) What is your email?");
+          chrome.storage.sync.set({ email: email });
         }
         setTimeout(() => {
-          document.getElementById("Username").value = u;
+          document.getElementById("Username").value = email;
           document.getElementById("nextBtn").click();
         }, 100);
       });
@@ -97,29 +105,6 @@ waitForElementToDisplay(
   },
   100,
   9000
-);
-
-waitForElementToDisplay(
-  "#to-pwd",
-  function () {
-    chrome.storage.local.get(["u", "p"], function (result) {
-      u = result.u;
-      p = result.p;
-      if (u == "undefined" || u == undefined) {
-        u = prompt("(First time setup) What is your username?");
-        chrome.storage.local.set({ u: u });
-
-        // p = prompt("(First time setup) What is your username?");
-        chrome.storage.local.set({ p: u });
-      }
-      setTimeout(() => {
-        document.getElementById("to-pwd").value = p;
-        document.getElementById("to-signin").click();
-      }, 100);
-    });
-  },
-  5000,
-  90000000000
 );
 
 function waitForThing(thing, callback) {
